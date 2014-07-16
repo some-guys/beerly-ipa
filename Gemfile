@@ -34,6 +34,9 @@ gem 'haml-rails', '~> 0.5.3'
 # Makes building forms for models easy
 gem 'simple_form', '~> 3.0.2'
 
+# CSS Framework for cool css stuff
+gem 'bootstrap-sass', '~> 3.2.0.0'
+
 group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring', '~> 1.1.3'

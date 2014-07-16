@@ -11,10 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140716095830) do
+ActiveRecord::Schema.define(version: 20140716103615) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "beers", force: true do |t|
+    t.string   "name"
+    t.float    "alc"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "beers", ["alc"], name: "index_beers_on_alc", using: :btree
+  add_index "beers", ["name"], name: "index_beers_on_name", using: :btree
 
   create_table "locations", force: true do |t|
     t.string   "name"
@@ -27,5 +37,26 @@ ActiveRecord::Schema.define(version: 20140716095830) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "menu_items", force: true do |t|
+    t.integer  "menu_id"
+    t.integer  "beer_id"
+    t.integer  "price"
+    t.integer  "amount"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menu_items", ["beer_id"], name: "index_menu_items_on_beer_id", using: :btree
+  add_index "menu_items", ["menu_id"], name: "index_menu_items_on_menu_id", using: :btree
+  add_index "menu_items", ["price"], name: "index_menu_items_on_price", using: :btree
+
+  create_table "menus", force: true do |t|
+    t.integer  "location_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "menus", ["location_id"], name: "index_menus_on_location_id", using: :btree
 
 end
