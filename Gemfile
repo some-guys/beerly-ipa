@@ -23,7 +23,7 @@ gem 'turbolinks', '~> 2.2.2'
 gem 'jbuilder', '~> 2.0'
 
 # Super duper fast JSON parser
-#gem 'oj', '~> 2.9.9'
+gem 'oj', '~> 2.9.9'
 
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
@@ -43,6 +43,9 @@ group :development do
 
   # Faster webserver, replaces Webrick
   gem 'thin', '~> 1.6.2'
+
+  # Pry as rails console
+  gem 'pry-rails', '~> 0.3.2'
 
   # Helps with debugging
   gem 'pry-byebug', '~> 1.3.3'
