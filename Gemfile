@@ -43,6 +43,9 @@ group :development do
 
   # Faster webserver, replaces Webrick
   gem 'thin', '~> 1.6.2'
+
+  # Helps with debugging
+  gem 'pry-byebug', '~> 1.3.3'
 end
 
 group :development, :test do
