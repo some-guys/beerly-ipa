@@ -1,8 +1,5 @@
 %h1 Locations
-%ul
+.list-group
   - @locations.each do |location|
-    %li
-      = location
-      = link_to :edit, location
-      .span.glyphicon.glyphicon-search
+    = link_to location, location, :class => "list-group-item"
 
