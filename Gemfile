@@ -28,18 +28,17 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
-# Faster webserver, replaces Webrick
-gem 'thin', '~> 1.6.2'
-
 # Provides haml generators
 gem 'haml-rails', '~> 0.5.3'
 
-# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
-gem 'spring',        group: :development
-
 group :development, :test do
-  # RSpec for Rails
-  gem 'rspec-rails', '~> 3.0.1'
+	# RSpec for Rails
+	gem 'rspec-rails', '~> 3.0.1'
+	# Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
+	gem 'spring'
+
+	# Faster webserver, replaces Webrick
+	gem 'thin', '~> 1.6.2'
 end
 
 # Use ActiveModel has_secure_password
