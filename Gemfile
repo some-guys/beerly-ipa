@@ -49,6 +49,9 @@ group :development do
 
   # Helps with debugging
   gem 'pry-byebug', '~> 1.3.3'
+
+  # Adds model schema as comment to class definition
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :development, :test do
