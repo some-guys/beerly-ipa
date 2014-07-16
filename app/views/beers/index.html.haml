@@ -1,0 +1,5 @@
+%h1 Beers
+.list-group
+  - @beers.each do |beer|
+    = link_to beer, beer, :class => "list-group-item"
+

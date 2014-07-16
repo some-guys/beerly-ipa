@@ -1,1 +1,9 @@
-%h1= @location
+%h1
+  = @location
+  %small
+    = link_to "map", "http://maps.google.com/maps/place/#{@location.name}/@#{@location.latitude},#{@location.longitude},18z", :target => :_blank
+%h3 Menu
+.list-group
+  - @location.menu.items.each do |item|
+    = link_to item.beer, item.beer, :class => "list-group-item"
+
