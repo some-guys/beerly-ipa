@@ -1,2 +1,17 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
+$(document).ready(function() {
+  Beers.initialize();
+});
+
+var Beers = function() {
+  var handleBeerUpdate = function() {
+    $("#new_beer").on("ajax:success", function(xhr, data, status) {
+      $("#beers_list").html(data);
+    });
+  }
+
+  return {
+    initialize: function() {
+      handleBeerUpdate();
+    }
+  }
+}();

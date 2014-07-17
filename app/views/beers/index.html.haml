@@ -1,5 +1,10 @@
 %h1 Beers
-.list-group
-  - @beers.each do |beer|
-    = link_to beer, beer, :class => "list-group-item"
+= simple_form_for Beer.new, :remote => true, :html => {:class => "form-inline"} do |f|
+  = f.input :name
+  = f.input :alc, :as => :string
+  = f.submit
+%hr
+#beers_list
+  = render "beers_list"
+
 
