@@ -8,7 +8,7 @@
   = f.collection_select :beer_id, Beer.all, :id, :to_s, {:prompt => "select beer"}, {:class => "form-control", :autofocus => true}
   = f.text_field :price, :placeholder => "cents", :class => "form-control"
   = f.text_field :amount, :placeholder => "ml", :class => "form-control"
-  = f.submit "add beer"
+  = f.submit "add beer", :class => "form-control btn btn-success"
 %hr
 #menu_items_list
   = render "menu_items/menu_items_list"

@@ -14,4 +14,13 @@ class LocationsController < ApplicationController
   def show
     @location = Location.find params[:id]
   end
+
+  def destroy
+    @location = Location.find params[:id]
+    if @location.destroy
+      redirect_to locations_path
+    else
+      render @location
+    end
+  end
 end

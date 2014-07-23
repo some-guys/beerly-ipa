@@ -1,3 +1,6 @@
 .list-group
   - @beers.each do |beer|
-    = link_to beer, beer, :class => "list-group-item"
+    %li.list-group-item
+      = link_to beer, beer
+      .pull-right
+        = link_to "delete", beer, :method => :delete, :class => "btn btn-xs btn-danger"

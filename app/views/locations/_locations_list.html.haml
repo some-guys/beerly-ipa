@@ -1,4 +1,7 @@
 .list-group
   - @locations.each do |location|
-    = link_to location, location, :class => "list-group-item"
+    %li.list-group-item
+      = link_to location, location
+      .pull-right
+        = link_to "delete", location, :method => :delete, :class => "btn btn-xs btn-danger"
 

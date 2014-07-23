@@ -7,5 +7,16 @@ class MenuItemsController < ApplicationController
     end
     redirect_to @location
   end
+
+  def destroy
+    menu_item = MenuItem.find params[:id]
+    @location = menu_item.location
+    if menu_item.destroy
+      redirect_to @location
+    else
+      flash[:alert] = "#{@menu_item.beer} could not be deleted from menu"
+      redirect_to @location
+    end
+  end
 end
 

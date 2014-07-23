@@ -15,4 +15,14 @@ class BeersController < ApplicationController
   def show
     @beer = Beer.find params[:id]
   end
+
+  def destroy
+    @beer = Beer.find params[:id]
+    if @beer.destroy
+      redirect_to beers_path
+    else
+      flash[:alert] = "#{@beer} could not be destroyed"
+      redirect_to beers_path
+    end
+  end
 end

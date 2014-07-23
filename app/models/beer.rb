@@ -12,7 +12,16 @@
 class Beer < ActiveRecord::Base
   validates_presence_of :name
 
+  before_destroy :check_usage
+
   def to_s
     name
   end
+
+  private
+
+  def check_usage
+    MenuItem.where(:beer_id => id).empty?
+  end
+
 end
