@@ -1,4 +1,9 @@
 %h1 Locations
-.list-group
-  - @locations.each do |location|
-    = link_to location, location, :class => "list-group-item"
+= form_for Location.new, :remote => true, :html => {:class => "form-inline"} do |f|
+  = f.text_field :name, :placeholder => "name"
+  = f.text_field :latitude, :placeholder => "latitude", :type => "string"
+  = f.text_field :longitude, :as => :string, :placeholder => "longitude"
+  = f.submit
+%hr
+#locations_list
+  = render "locations_list"
