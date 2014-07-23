@@ -59,6 +59,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'
 end
 
+group :production do
+  # For heroku. See https://devcenter.heroku.com/articles/getting-started-with-rails4
+  gem 'rails_12factor', '~> 0.0.2'
+end
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -71,3 +76,5 @@ end
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
+
+ruby "2.1.2"

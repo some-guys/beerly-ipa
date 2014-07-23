@@ -82,5 +82,3 @@ test:
 production:
   <<: *default
   database: beerly-ipa_production
-  username: beerly-ipa
-  password: <%= ENV['BEERLY-IPA_DATABASE_PASSWORD'] %>
