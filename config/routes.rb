@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root "locations#index"
 
   resources :locations
+  resources :menu_items
   resources :beers
 
   namespace :api, defaults: { format: 'json' } do

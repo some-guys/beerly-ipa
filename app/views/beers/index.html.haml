@@ -2,7 +2,7 @@
 = form_for Beer.new, :remote => true, :html => {:class => "form-inline"} do |f|
   = f.text_field :name, :placeholder => "name"
   = f.text_field :alc, :placeholder => "alc"
-  = f.submit
+  = f.submit "add beer"
 %hr
 #beers_list
   = render "beers_list"

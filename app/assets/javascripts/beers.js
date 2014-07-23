@@ -3,7 +3,7 @@ $(document).on("ready page:load", function() {
 });
 
 var Beers = function() {
-  var handleBeerUpdate = function() {
+  var handleBeerSave = function() {
     $("#new_beer").on("ajax:success", function(xhr, data, status) {
       $("#beers_list").html(data);
     });
@@ -11,7 +11,7 @@ var Beers = function() {
 
   return {
     initialize: function() {
-      handleBeerUpdate();
+      handleBeerSave();
     }
   }
 }();

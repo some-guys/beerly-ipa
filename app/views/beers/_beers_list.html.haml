@@ -1,4 +1,3 @@
 .list-group
   - @beers.each do |beer|
-    %li.list-group-item
-      = link_to beer, beer
+    = link_to beer, beer, :class => "list-group-item"

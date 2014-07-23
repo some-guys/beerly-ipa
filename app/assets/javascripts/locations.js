@@ -3,7 +3,7 @@ $(document).on("ready page:load", function() {
 });
 
 var Locations = function() {
-  var handleLocationUpdate = function() {
+  var handleLocationSave = function() {
     $("#new_location").on("ajax:success", function(xhr, data, status) {
       $("#locations_list").html(data);
     });
@@ -11,7 +11,7 @@ var Locations = function() {
 
   return {
     initialize: function() {
-      handleLocationUpdate();
+      handleLocationSave();
     }
   }
 }();
