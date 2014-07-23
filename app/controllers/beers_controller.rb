@@ -8,10 +8,8 @@ class BeersController < ApplicationController
     @beer = Beer.new params.require(:beer).permit(:name, :alc)
     if @beer.save
       @beers = Beer.order(:name)
-      render :partial => "beers_list"
-    else
-      render :partial => "beers_list"
     end
+    redirect_to beers_path
   end
 
   def show

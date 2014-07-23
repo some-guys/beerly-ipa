@@ -1,9 +1,9 @@
 %h1 Locations
-= form_for Location.new, :remote => true, :html => {:class => "form-inline"} do |f|
-  = f.text_field :name, :placeholder => "name"
-  = f.text_field :latitude, :placeholder => "latitude", :type => "string"
-  = f.text_field :longitude, :as => :string, :placeholder => "longitude"
-  = f.submit "add location"
+= form_for Location.new, :html => {:class => "form-inline"} do |f|
+  = f.text_field :name, :placeholder => "name", :class => "form-control", :autofocus => true
+  = f.text_field :latitude, :placeholder => "latitude", :class => "form-control"
+  = f.text_field :longitude, :placeholder => "longitude", :class => "form-control"
+  = f.submit "add location", :class => "form-control btn btn-success"
 %hr
 #locations_list
   = render "locations_list"

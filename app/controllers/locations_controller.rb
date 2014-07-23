@@ -7,10 +7,8 @@ class LocationsController < ApplicationController
     @location = Location.new params.require(:location).permit(:name, :latitude, :longitude)
     if @location.save
       @locations = Location.order(:name)
-      render :partial => "locations_list"
-    else
-      render :partial => "locations_list"
     end
+    redirect_to locations_path
   end
 
   def show

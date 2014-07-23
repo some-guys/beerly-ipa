@@ -15,3 +15,7 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require_tree .
+
+$(document).on("page:load", function() {
+  $('[autofocus="autofocus"]').focus();
+});
